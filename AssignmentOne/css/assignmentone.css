@@ -1,0 +1,129 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.blogs-sec {
+  height: 500px;
+  width: 100%;
+  background-color: #ccc;
+}
+.blogs-sec .blog {
+  width: calc(100% / 3.1);
+  margin: 10px 5px;
+  height: 95%;
+  float: left;
+  background-color: purple;
+  text-align: center;
+  padding: 10px;
+  color: #cdd;
+}
+
+.btns {
+  width: fit-content;
+  margin: 20px auto;
+}
+.btns button,
+.form .btn {
+  border: none;
+  padding: 10px 30px;
+  font-size: 18px;
+  color: #fff;
+}
+.btns button:first-child {
+  background-color: rgb(38, 98, 225);
+}
+.btns button:last-child {
+  background-color: #000;
+}
+.btns button:nth-child(2),
+.form .btn {
+  background-color: rgb(0, 0, 81);
+}
+.btns button:nth-child(3) {
+  background-color: #27cbb5;
+}
+.btns button:nth-child(4) {
+  background-color: #27a7cb;
+}
+.btns button:nth-child(5) {
+  background-color: #ffef3e;
+}
+.btns button:nth-child(6) {
+  background-color: rgb(212, 52, 52);
+}
+
+.form {
+  width: 500px;
+  margin: 20px auto;
+  background-color: #ececec;
+  padding: 15px 15px 60px 15px;
+  position: relative;
+}
+.form input,
+.form label {
+  display: block;
+}
+.form input,
+.form textarea {
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 10px 15px;
+}
+.form label {
+  margin: 10px 0;
+}
+.form .btn {
+  font-size: 16px;
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+}
+
+.table-container {
+  margin: 20px 0;
+}
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+
+/* Striped table styling */
+.table-striped tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+/* Badges for action status */
+.badge {
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.badge-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.badge-warning {
+  background-color: #ffc107;
+  color: black;
+}
+
+.badge-danger {
+  background-color: #dc3545;
+  color: white;
+}
