@@ -1,0 +1,83 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.flex-sec header,
+.grid-sec header {
+  background-color: #e6e6e6;
+  text-align: center;
+  font-size: 30px;
+  padding: 30px 0;
+  color: #ababab;
+}
+
+.flex-sec main {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-sec main .content {
+  width: 50%;
+  color: #ababab;
+  padding: 15px;
+}
+.flex-sec main .content h2,
+.grid-sec main .content h2 {
+  margin: 10px 0;
+}
+.flex-sec nav,
+.flex-sec aside {
+  width: 20%;
+}
+
+.flex-sec nav ul,
+.grid-sec nav ul {
+  list-style: none;
+  text-align: center;
+}
+.flex-sec nav ul li,
+.grid-sec nav ul li {
+  padding: 10px;
+  background-color: #e6e6e6;
+  margin: 10px;
+  width: 100%;
+}
+.flex-sec nav ul li a,
+.grid-sec nav ul li a {
+  color: #000;
+}
+
+.flex-sec aside,
+.grid-sec aside {
+  padding: 15px;
+  background-color: #e6e6e6;
+  color: #ababab;
+  margin: 10px 0;
+  text-align: center;
+}
+.flex-sec aside h2,
+.grid-sec aside h2 {
+  margin: 15px 0;
+}
+
+.flex-sec footer,
+.grid-sec footer {
+  background-color: #e6e6e6;
+  color: #ababab;
+  text-align: center;
+  padding: 15px;
+}
+
+.grid-sec {
+  margin-top: 30px;
+}
+.grid-sec main {
+  display: grid;
+  grid-template-columns: 20% 50% 20%;
+  justify-content: space-between;
+}
+.grid-sec main .content {
+  color: #ababab;
+  padding: 15px;
+}
