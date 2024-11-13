@@ -1,0 +1,44 @@
+$largeScreen: 960px;
+$mediumScreen: 720px;
+$smallScreen: 540px;
+
+@media (max-width: $largeScreen) {
+  .about-me .skills .card {
+    width: calc(100% / 2.1);
+  }
+  .featured-projects .cards .card {
+    width: 90%;
+    margin-inline: auto;
+  }
+  .blog .cards .card {
+    width: calc(100% / 2.1);
+    margin-inline: auto;
+  }
+  .form form input:not([type="checkbox"]):not([type="submit"]) {
+    width: 95%;
+  }
+}
+@media (max-width: $mediumScreen) {
+  nav {
+    display: none;
+  }
+  .btn-offcanvas {
+    display: block;
+    margin: 20px 0;
+    text-align: right;
+    outline: none;
+  }
+  .experience .box {
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: $smallScreen) {
+  .about-me .skills .card {
+    width: 90%;
+    margin-inline: auto;
+  }
+  .blog .cards .card {
+    width: 90%;
+  }
+}
