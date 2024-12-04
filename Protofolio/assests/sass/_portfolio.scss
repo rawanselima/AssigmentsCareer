@@ -1,0 +1,432 @@
+$mainColor: #5271ff;
+$blackColor: #292929;
+$greyColor: #fafafa;
+$greyDarkColor: #cccccc;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: $blackColor;
+}
+
+.btn-offcanvas {
+  color: $mainColor;
+  display: none;
+}
+.offcanvas-start {
+  width: 300px;
+}
+
+nav,
+.offcanvas {
+  background-color: $greyColor;
+  min-height: 100vh;
+  .info {
+    text-align: center;
+    border-bottom: 1px solid $greyDarkColor;
+    padding-bottom: 30px;
+    .image {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: $mainColor;
+      margin-inline: auto;
+      margin-top: 20px;
+      img {
+        padding: 10px 10px 0 10px;
+        border-radius: 50%;
+      }
+    }
+    h4 {
+      font-weight: bold;
+      font-size: 18px;
+      margin-top: 2px;
+      margin-bottom: 0;
+    }
+    h5 {
+      margin: 5px 0;
+      font-size: 12px;
+      color: $blackColor;
+    }
+    a {
+      color: $mainColor;
+      text-decoration: none;
+      i {
+        margin-top: 15px;
+        border-radius: 50%;
+        border: 1px $greyDarkColor solid;
+        padding: 10px 7px;
+        transition: 0.3s;
+        cursor: pointer;
+        &:hover {
+          background-color: $mainColor;
+          color: $greyColor;
+          border-color: $mainColor;
+        }
+      }
+    }
+  }
+  .pages {
+    ul {
+      list-style: none;
+      margin-top: 30px;
+      li {
+        padding: 5px;
+        border-radius: 5px;
+        margin: 5px;
+        margin-top: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover {
+          background-color: $mainColor;
+          color: $greyColor;
+        }
+        i {
+          margin-right: 5px;
+        }
+      }
+      li.active {
+        background-color: $mainColor;
+        color: $greyColor;
+      }
+    }
+  }
+}
+
+@mixin btn-style($backgroundColor, $textColor) {
+  padding: 10px 20px;
+  border-radius: 15px;
+  color: $textColor;
+  background-color: $backgroundColor;
+  transition: 0.3s;
+  &:hover {
+    border: 2px solid $backgroundColor;
+    background-color: transparent;
+    color: $backgroundColor;
+  }
+}
+
+@mixin line-style($background-color, $left, $right, $top) {
+  content: " ";
+  width: 2.3px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: $background-color;
+  position: absolute;
+  top: $top;
+  right: $right;
+  left: $left;
+}
+
+.content {
+  .intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .image {
+      text-align: center;
+      img {
+        position: relative;
+        &::after {
+          content: "";
+          background-color: $mainColor;
+          width: 600px;
+          height: 200px;
+          position: absolute;
+        }
+      }
+    }
+    .info {
+      h4 {
+        font-weight: 400;
+      }
+      h1 {
+        font : {
+          size: 60px;
+          weight: bold;
+        }
+        color: $mainColor;
+      }
+      p {
+        span {
+          color: $mainColor;
+        }
+      }
+      .btn {
+        @include btn-style($mainColor, $greyColor);
+        margin: 15px 5px;
+      }
+      .btn:last-child {
+        @include btn-style($blackColor, $greyColor);
+      }
+    }
+  }
+}
+
+.experience {
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  padding: 20px;
+  .box {
+    display: flex;
+    align-items: center;
+    .number {
+      font-size: 50px;
+      font-weight: bold;
+      color: $mainColor;
+      margin: 0 30px;
+      position: relative;
+      &::after {
+        @include line-style($greyDarkColor, auto, -10px, 20px);
+      }
+    }
+  }
+}
+.about-me {
+  padding: 20px;
+  .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h1 {
+      position: relative;
+      &::after {
+        @include line-style($mainColor, -10px, auto, 5px);
+      }
+    }
+    span {
+      color: $mainColor;
+    }
+    .btn {
+      @include btn-style($mainColor, $greyColor);
+    }
+  }
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .card {
+      background-color: $greyColor;
+      border: 1px solid $greyDarkColor;
+      padding: 30px 0;
+      margin-top: 15px;
+      width: calc(100% / 4.1);
+      transition: 0.3s;
+      &:hover {
+        box-shadow: 0 0 10px $greyDarkColor;
+        transform: scale(1.02);
+      }
+      img {
+        width: 30px;
+        margin-right: 5px;
+      }
+      img:first-child {
+        margin-left: 20px;
+      }
+      .card-text {
+        font-size: 15px;
+        margin-top: 15px;
+      }
+    }
+  }
+}
+
+.next-project.row {
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-image: url(../images/bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  .data {
+    p {
+      font-size: 14px;
+    }
+  }
+  .btn {
+    @include btn-style($mainColor, $greyColor);
+    height: fit-content;
+  }
+}
+
+.featured-projects {
+  margin: 50px 0;
+  .data {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    .info {
+      position: relative;
+      &::after {
+        @include line-style($mainColor, 0px, auto, 5px);
+      }
+      p {
+        font-size: 14px;
+        margin: 20px 0;
+      }
+    }
+    .btn {
+      @include btn-style($mainColor, $greyColor);
+    }
+  }
+  .cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    .card {
+      width: calc(100% / 2.1);
+      margin-right: 10px;
+      margin-top: 15px;
+      .card-body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .btns {
+          margin: 15px 0;
+          .btn {
+            border: 1px solid $blackColor;
+            border-radius: 10px;
+            margin-top: 10px;
+          }
+        }
+        .arrow {
+          background-color: $greyDarkColor;
+          color: $blackColor;
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          padding: 13px 5px 5px 5px;
+          text-align: center;
+          i {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+.blog {
+  margin: 30px 0;
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+      position: relative;
+      &::after {
+        @include line-style($mainColor, -10px, auto, 7px);
+      }
+    }
+    p {
+      font-size: 14px;
+    }
+    .btn {
+      @include btn-style($mainColor, $greyColor);
+    }
+  }
+  .cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .card {
+      width: calc(100% / 3.1);
+      margin-right: 10px;
+      margin-top: 10px;
+      .card-text {
+        color: #828282;
+        font-size: 12px;
+        span {
+          color: $mainColor;
+        }
+      }
+    }
+  }
+}
+
+.contact {
+  margin: 40px 0;
+  h1 {
+    position: relative;
+    &::after {
+      @include line-style($mainColor, -10px, auto, 5px);
+    }
+  }
+  .details-contact {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-inline: auto;
+    margin: 40px 0;
+
+    .box {
+      margin-top: 10px;
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      position: relative;
+      &::after {
+        @include line-style($greyDarkColor, -15px, auto, 5px);
+      }
+      .icon {
+        margin-right: 10px;
+        i {
+          color: $mainColor;
+        }
+      }
+      .info p {
+        font-size: 12px;
+        color: #828282;
+      }
+    }
+  }
+}
+
+.form {
+  h1 {
+    position: relative;
+    &::after {
+      @include line-style($mainColor, -10px, auto, 5px);
+    }
+  }
+  p {
+    font-size: 14px;
+  }
+  form {
+    input:not([type="checkbox"]):not([type="submit"]),
+    textarea {
+      width: calc(100% / 2.1);
+      border: 1px solid $greyDarkColor;
+      border-radius: 10px;
+      outline: none;
+      padding: 10px 15px;
+      margin: 5px 10px;
+      &::placeholder {
+        color: $mainColor;
+      }
+    }
+    textarea {
+      width: calc(100% - 35px);
+    }
+    .btn {
+      display: block;
+      margin: 30px 0;
+      @include btn-style($mainColor, $greyColor )
+    }
+  }
+}
+
+.copyright {
+  font-weight: bold;
+}
